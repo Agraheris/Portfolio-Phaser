@@ -26,5 +26,5 @@ function create() {
 }
 
 function update() {
-    // Logique de mise à jour du jeu ici
+    this.player.update();
 }

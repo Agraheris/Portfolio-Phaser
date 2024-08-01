@@ -1,5 +1,6 @@
 import Phaser from "phaser";
-import player from '/assets/player.png'
+import playerSprite from '/assets/player.png'
+import player from '/src/classes/player'
 
 const config = {
     type: Phaser.AUTO,
@@ -15,13 +16,13 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
-    this.load.image('player', player);
+    this.load.image('player', playerSprite);
     console.log('Preloading assets...');
 }
 
 function create() {
     console.log('Creating scene...');
-    this.player = this.add.sprite(400, 300, 'player');
+    this.player = new player(this, 400, 300, 'player');
 }
 
 function update() {

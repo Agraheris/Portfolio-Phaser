@@ -5,6 +5,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
         this.cursors = scene.input.keyboard.createCursorKeys();
     }
 
+        
     update() {
         if (this.cursors.left.isDown) {
             this.x -= 2;

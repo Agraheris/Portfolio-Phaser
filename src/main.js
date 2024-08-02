@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import spritesheet from '/assets/spritesheet.png'
 import player from '/src/classes/player'
+import Wall from "./classes/wall";
 
 const config = {
     type: Phaser.AUTO,
@@ -50,6 +51,8 @@ function create() {
         frameRate: 10,
         repeat: -1
     });
+
+    this.wall = new Wall(this, 400, 300, 50, 50, 0x00ff00);
 }
 
 

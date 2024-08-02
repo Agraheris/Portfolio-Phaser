@@ -8,15 +8,18 @@ export default class Player extends Phaser.GameObjects.Sprite {
     update() {
         if (this.cursors.left.isDown) {
             this.x -= 2;
-        }
-        if (this.cursors.right.isDown) {
+            this.anims.play('left', true);
+        } else if (this.cursors.right.isDown) {
             this.x += 2;
-        }
-        if (this.cursors.up.isDown) {
+            this.anims.play('right', true);
+        } else if (this.cursors.up.isDown) {
             this.y -= 2;
-        }
-        if (this.cursors.down.isDown) {
+            this.anims.play('up', true);
+        } else if (this.cursors.down.isDown) {
             this.y += 2;
+            this.anims.play('down', true);
+        } else {
+            this.anims.stop();
         }
     }
 }
